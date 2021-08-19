@@ -19,7 +19,9 @@ class Classifier(tf.keras.Model):
         else:
             logits = output[0]
 
-        return logits
+        predictions = tf.math.argmax(logits, axis=-1)
+
+        return predictions
 
 
 
